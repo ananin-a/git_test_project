@@ -25,9 +25,9 @@ class SignUpPageLocators:
     """Локаторы страницы регистрации"""
     TITLE_PAGE: str = (By.XPATH, "//h1")
     PROBLEM_MESSAGE: str = (By.XPATH, "//div[@class='flash flash-error my-3']")
-    NAME_ERROR: str = (By.XPATH, "//dd[text()=\"Username can't be blank\"]")
-    EMAIL_ERROR: str = (By.XPATH, "//dd[text()=\"Email can't be blank\"]")
-    PASSWORD_ERROR: str = (By.XPATH, "//dd[text()=\"Password can't be blank\"]")
+    NAME_ERROR: str = (By.XPATH, "//input[@name='user[login]']/../../following-sibling::dd")
+    EMAIL_ERROR: str = (By.XPATH, "//input[@name='user[email]']/../../following-sibling::dd")
+    PASSWORD_ERROR: str = (By.XPATH, "//input[@name='user[password]']/../../following-sibling::dd")
     FIELD_USER_NAME: str = (By.XPATH, "//input[@name='user[login]']")
     FIELD_EMAIL: str = (By.XPATH, "//input[@name='user[email]']")
     FIELD_PASSWORD: str = (By.XPATH, "//input[@name='user[password]']")

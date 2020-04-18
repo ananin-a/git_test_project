@@ -3,19 +3,14 @@ from .locators import LoginPageLocators
 
 
 class LoginPage(BasePage):
+    """Страница авторизации"""
     def should_de_a_page_title(self):
         """Должен быть заголовок 'Sign in to GitHub'."""
-        title_name = self.element_search(LoginPageLocators.TITLE_PAGE).text
-        print(f"\nЗаголовок {title_name}")
-        assert title_name == "Sign in to GitHub", \
-            ">>> Неверный заголовок страницы."
+        return self.element_search(LoginPageLocators.TITLE_PAGE).text
 
     def should_be_incorrect_message(self):
         """Должно быть сообщение о невернои имени или пароля пользователя."""
-        incorrect_message = self.element_search(LoginPageLocators.INCORRECT_MASSAGE).text
-        print(f"\nСообщение об ошибке {incorrect_message}")
-        assert incorrect_message == "Incorrect username or password.", \
-            ">>> Нет сообщения о неверном имени или пароле."
+        return self.element_search(LoginPageLocators.INCORRECT_MASSAGE).text
 
     def invalid_log_in(self, name: str, password: str):
         """

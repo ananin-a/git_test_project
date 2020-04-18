@@ -3,35 +3,26 @@ from .locators import SignUpPageLocators
 
 
 class SignUpPage(BasePage):
+    """Страница регистрации."""
     def should_de_a_page_title(self):
         """Должен быть заголовок страницы"""
-        title_name: str = self.element_search(SignUpPageLocators.TITLE_PAGE).text
-        assert title_name == "Create your account", \
-            ">>> Неверный заголовок страницы."
+        return self.element_search(SignUpPageLocators.TITLE_PAGE).text
 
     def should_be_message_problems_create_account(self):
-        """При стоздании аккаунта возникла проблема"""
-        message: str = self.element_search(SignUpPageLocators.PROBLEM_MESSAGE).text
-        assert message == "There were problems creating your account.", \
-            ">>> Нет сообщения о проблеме создания аккаунта"
+        """Ошибка: При стоздании аккаунта возникла проблема"""
+        return self.element_search(SignUpPageLocators.PROBLEM_MESSAGE).text
 
     def should_be_a_error_name_message(self):
-        """Поле имя не может быть пустым"""
-        error_message: str = self.element_search(SignUpPageLocators.NAME_ERROR).text
-        assert error_message == "Username can't be blank", \
-            ">>> Нет сообщения о пустом имени пользователя."
+        """Получеть текст ошибки от поля Имя"""
+        return self.element_search(SignUpPageLocators.NAME_ERROR).text
 
     def should_be_a_error_mail_message(self):
-        """Поле электронного адреса не может быть пустым"""
-        error_message: str = self.element_search(SignUpPageLocators.EMAIL_ERROR).text
-        assert error_message == "Email can't be blank", \
-            ">>> Нет сообщения о пустом поле электронный адрес."
+        """Получить текст ошибки от поля электронного адреса"""
+        return self.element_search(SignUpPageLocators.EMAIL_ERROR).text
 
     def should_be_a_error_password_message(self):
-        """Поле пароля не может быть пустыи"""
-        error_message: str = self.element_search(SignUpPageLocators.PASSWORD_ERROR).text
-        assert error_message == "Password can't be blank", \
-            ">>> Нет сообщения о пустм поле пароля."
+        """Получить текст ошибки от поля пароля"""
+        return self.element_search(SignUpPageLocators.PASSWORD_ERROR).text
 
     def registration_new_user(self, name: str, email: str, password: str):
         """

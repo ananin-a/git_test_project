@@ -5,6 +5,11 @@ from selenium.webdriver.support.wait import WebDriverWait
 class BasePage:
     def __init__(self, browser):
         self.browser = browser
+        self.url = "https://github.com/"
+
+    def open(self):
+        """Открыть главнцю странцу"""
+        self.browser.get(self.url)
 
     def element_search(self, locator: str, timeout: int = 3):
         """
