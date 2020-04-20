@@ -14,9 +14,9 @@ def test_sign_in(browser):
 
 def test_registration_fail(browser):
     """Регистация с невалидными данными нового пользователя."""
-    name: str = "al"
-    email: str = "al@bk.com"
-    password: str = "112233asd"
+    name = "al"
+    email = "al@bk.com"
+    password = "112233asd"
 
     main_page = MainPage(browser, url)
     main_page.open()
@@ -29,9 +29,9 @@ def test_registration_fail(browser):
 
 def test_sing_up_empty_user_name(browser):
     """Регистрация пользователя с пустым полем логина."""
-    name: str = ""
-    email: str = "al@bk.com"
-    password: str = "112233asd"
+    name = ""
+    email = "al@bk.com"
+    password = "112233asd"
 
     main_page = MainPage(browser, url)
     main_page.open()
@@ -42,9 +42,9 @@ def test_sing_up_empty_user_name(browser):
 
 def test_sing_up_invalid_mail(browser):
     """Регисрация пользователя с невалидным полем Email."""
-    name: str = "al"
-    email: str = "123"
-    password: str = 'df7ysd87gs7'
+    name = "al"
+    email = "123"
+    password = 'df7ysd87gs7'
 
     main_page = MainPage(browser, url)
     main_page.open()
@@ -54,10 +54,10 @@ def test_sing_up_invalid_mail(browser):
 
 
 def test_sign_up_wint_easy_password(browser):
-    """Ввод пароля не соответствующего минимальным  требования."""
-    name: str = ""
-    email: str = ""
-    password: str = "a2345678"
+    """Ввод пароля не соответствующего минимальным  требовани"""
+    name = ""
+    email = ""
+    password = "a2345678"
 
     main_page = MainPage(browser, url)
     main_page.open()

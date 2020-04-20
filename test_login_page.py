@@ -5,8 +5,8 @@ url = "https://github.com/login"
 
 def test_login_empty_data(browser):
     """Получение ошибки из за пустого поля логина"""
-    name: str = ""
-    password: str = "cb8q3475b03bf045902"
+    name = ""
+    password = "cb8q3475b03bf045902"
 
     login_page = LoginPage(browser, url)
     login_page.open()
@@ -17,8 +17,8 @@ def test_login_empty_data(browser):
 
 def test_password_empty_data(browser):
     """Получение ошиби из за пустого поля пароля."""
-    name: str = "alex"
-    password: str = ""
+    name = "alex"
+    password = ""
 
     login_page = LoginPage(browser, url)
     login_page.open()
